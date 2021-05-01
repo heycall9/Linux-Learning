@@ -1,0 +1,235 @@
+COMMAND LINE
+----------------------------------------------------------------------------------------------
+		Command Line(Baris Perintah) adalah sebuah interface yang memungkinkan pengguna untuk
+memasukkan perintah dengan mengetikkan perintahnya. output dari command line ini adalah berupa
+teks. alasan penggunaan command line adalah karena Command Line biasanya lebih cocok digunakan 
+untuk mengelola dan mengurus jaringan, hosting web, administrasi, keamanan dll.
+
+SHELL
+----------------------------------------------------------------------------------------------
+		Shell adalah UI atau User interface yang bertugas untuk memproses semua perintah yang 
+pengguna ketikkan pada CLI atau Command Line Interface. jadi singkatnya adalah shell digunakan
+berfungsi untuk menerjemahkan perintah perintah pada CLI.
+
+PERINTAH DASAR SHELL
+----------------------------------------------------------------------------------------------
+		> cd [location], digunakan untuk berpindah ke directory yang diinginkan, ex : cd /data
+		> pwd [option], berfungsi untuk mengOutputkan dimana direktori kita sekarang berada
+		> mkdir [option], berfungsi untuk membuat sebuah directory/folder baru pada directory
+						  sekarang, ex : mkdir data 
+		> ls [options], berfungsi untuk menampilkan list konten dari directory yang sekarang
+					    dibuka.
+					> ls -l, untuk menampilkan list panjang informasi semua file/directory yang
+							 ada pada directory seperti permission, nama file, dll.
+					> ls -a, menunjukkan list file dan directory yang ter hidden
+					> ls /etc, menunjukkan isi konten dari masing masing directory
+					> ls -al, gabungan dari -l dan -a berfungsi untuk menampilkan list panjang
+							  informasi dari file/directory pada directory sekarang beserta file
+							  dan directory yang hidden
+		> rm [option], digunakan untuk menghapus sebuah file pada directory yang sekarang dibuka
+					   ex : rm file1.txt
+		> rmdir [option], digunakan untuk menghapus sebuah directory.
+		> nano [option], digunakan untuk membuka dan membuat sebuah file text baru menggunakan
+						 nano text editor, ex : nano file.txt
+		> touch [option], digunakan untuk membuat file baru yang kosong.
+		> mv [option] [option], digunakan untuk merubah nama sebuah file pada directory sekarang
+								ex : mv file1.txt file2.txt
+		> mv [option], digunakan untuk memindahkan suatu file.
+		> cp [optiom], digunakan untuk meng-copy suatu file beserta isi konten nya ke directory lain
+					   ex : cp file1.txt /home/filetext
+
+MANUAL PAGES
+----------------------------------------------------------------------------------------------
+		> man [option], digunakan untuk menampilkan informasi manual dari suatu perintah.
+		> man -k[option], digunakan untuk menampilkan informasi manual dari program yang diinginkan.
+		
+WILDCARD
+----------------------------------------------------------------------------------------------
+		Wildcard adalah character character spesial yang bisa digunakan pada shell linux. ada
+beberapa macam wildcard yang ada, berikut adalah beberapa macam wildcard.
+		> [option]*, berfungsi untuk mengekskusi semua file sesuai perintah dengan nama file
+					 sesuai option yang di inginkan, ex : rm file*.txt --> perintah ini akan
+					 menghapus semua file dengan awalan nama file dan berekstensi .txt
+		> [option]?, fungsinya hampir sama dengan "*", namun kalau "?" hanya akan mengekskusi file 
+					 dengan awalan nama sesuai option dan mengambil hanya satu character setelahnya
+					 ex : rm file?.txt akan menghapus semua file yang mempunya nama berawalan file
+					 dan diikuti hanya satu character setelahnya dan juga berekstensi .txt seperti
+					 file1.txt file2.txt dan sebagainya.
+		> [], berfungsi untuk menyatukan character yang di inginkan agar bisa di eksekusi secara
+			  bersamaan, ex : ls file.[jm]pg, perintah ini akan menampilkan informasi dari file
+			  yang berekstensi jpg dan mpg
+		> [!], kebalikan dari [], tanda [!] akan mengeksekusi file selain yang ada pada [!]
+			   ex : ls file.[mj]pg, berarti akan menampilkan informasi dari file yang berekstensi
+			   selain mpg dan jpg
+
+PERMISSIONS
+----------------------------------------------------------------------------------------------
+		Permission atau hak akses adalah suatu pembatasan pada file untu melakukan 3 perintah
+yaitu rwx atau read, write, execute.
+
+TIPE PERMISSIONS
+----------------------------------------------------------------------------------------------
+		> r (read) memungkinkan untuk melihat isi konten dari sebuah file.
+		> w (write) memungkinkan untuk merubah isi dari konten sebuah file.
+		> x (execute), memungkinkan untuk mengekeskusi dan menjalankan sebuah file.
+
+Subjek Permission
+----------------------------------------------------------------------------------------------
+		> Owner, merupakan pemilik atau owner dari file tersebut.
+		> Group, semua user yang masuk dalam satu grup dan memiliki file tersebut.
+		> Others, semua user yang tidak tergabung pada grup maupun sang pemilik file (owner).4
+
+BASH SCRIPT
+----------------------------------------------------------------------------------------------
+		Pengertian yang paling mudah dipahami dari bash script adalah bash script merupakan
+sebuah script dimana hampir mirip dengan bahasa pemrograman, namun hanya bisa melakukan perintah
+sederhana saja. Bash script mendukung while loop, for loop, if statement, dll.
+
+VARIABLE
+----------------------------------------------------------------------------------------------
+		Variable adalah tempat yang digunakan untuk menyimpan suatu data di memory komputer namun
+variable itu akan hilang apabila script sudah dijalankan. Cara membuat sebuah variable sebagai berikut
+	ex :
+			nama="haikal"
+			echo "Siapa namaku?" $nama
+ini akan mengoutputkan siapa namaku? haikal
+cara memanggil variable bash yang sudah di buat selalu di awali dengan tanda "$".
+
+INPUT
+----------------------------------------------------------------------------------------------
+		Pada bash script juga bisa memintak input an dari user dalam menjalankan sebuah programnya
+berikut adalah contoh input menggunakan bash script.
+	ex :
+			echo "Siapa nama kamu?"
+			read nama
+			echo "Halo nama saya $nama"
+	perintah ini apabila pada terminal linux akan menampilkan outputan 
+			Siapa nama kamu?
+			> haikal
+			Halo nama saya haikal
+
+OPERATIONS
+----------------------------------------------------------------------------------------------
+		Pada bash scripting juga bisa melakukan perintah operasi aritmatika dasar matematika
+seperti pertambahan, pengurangan, perkalian, dll.
+		> \*, digunakan untuk operasi perkalian.
+		> +, digunakan unruk operasi pertambahan.
+		> -, digunakan untuk operasi pengurangan.
+		> /, digunakan untuk operasi pembagian.
+		> ++, digunakan untuk operasi increment.
+		> --, digunakan untuk operasi decreament.
+		> %, digunakan untuk operasi sisa bagi atau biasa disebut modulus.
+lalu untuk menjalankan operasi - operasi diatas pada bash script terdapat beberapa cara, berikut
+adalah contoh menjalankan operasi operasi aritmatika pada bash script.
+		> let
+			ex : 	
+					var1=2
+					var2=1
+					let hasil=var1+var2
+					echo $hasil
+			perintah diatas akan menampilkan output 3
+		> expr
+			ex :	
+					var1=4
+					var2=4
+					expr $var1+$var2
+			perintah diatas akan menampilkan 8
+			
+BOOLEAN OPERATIONS
+----------------------------------------------------------------------------------------------
+		Operasi boolean adalah operasi yang hasil outputnya berupa true atau false.
+		> &&, adalah operasi and
+		> ||, adalah operasi or
+			
+COMPARE STRING AND NUMBER
+		> STRING
+			> ==, berarti sama dengan atau biasa disebut (equals)
+			> !=, berarti tidak sama dengan atau disebut (not equals)
+			> ">", berarti lebih besar dari
+			> "<", berarti lebih kecil dari
+			> ">=", berarti lebih besar dari atau sama dengan
+			> "<=", berarti lebih kecil dari atau sama dengan
+		> NUMBER
+			> -eq, berarti sama dengan
+			> -ne, berarti tidak sama dengan
+			> -gt, berarti lebih besar dari
+			> -ge, berarti lebih besar dari atau sama dengan
+			> -lt, berarti lebih kecil dari
+			> -le, berarti lebih keecil dari sama dengan
+			
+IF-ELSE STATEMENT
+----------------------------------------------------------------------------------------------
+		Pada bash script juga bisa menggunakan logika kondisi seperti if else statement berikut
+adalah contoh penggunaan if else statement pada bash script.
+	ex :
+			echo "Umur kamu berapa?"
+			read umur
+			if [%umur -ge 17]
+			then
+				echo "Kamu boleh punya KTP."
+			else 
+				echo "Kamu belum boleh punya KTP"
+			fi
+		perintah perintah diatas akan menghasilkan output sebagai berikut
+			Umur kamu berapa?
+			>17
+			Kamu boleh punya KTP.
+			
+LOOPING
+----------------------------------------------------------------------------------------------
+	Pada bash script juga bisa menggunakan looping statement seperti while dan for loop, berikut
+adalah beberapa cara untuk penggunaan looping pada bash script
+
+FOR LOOPING
+----------------------------------------------------------------------------------------------
+	ex :
+			for value in {1..5}
+			do
+				echo "Perulangan ke-$value"
+			done
+			
+			echo "Selesai"
+	Output :
+			Perulangan ke-1
+			Perulangan ke-2
+			Perulangan ke-3
+			Perulangan ke-4
+			Perulangan ke-5
+			Selesai
+			
+WHILE LOOPING
+----------------------------------------------------------------------------------------------
+	ex :
+			angka=1
+			while [ $angka -le 10 ]
+			do
+				echo "Perulangan while ke-$angka"
+				((angka++))
+			done
+			echo "Selesai"
+	Output	:
+			Perulangan while ke-1
+			Perulangan while ke-2
+			Perulangan while ke-3
+			Perulangan while ke-4
+			Perulangan while ke-5
+			Perulangan while ke-6
+			Perulangan while ke-7
+			Perulangan while ke-8
+			Perulangan while ke-9
+			Perulangan while ke-10
+			Selesai
+
+ARRAY
+----------------------------------------------------------------------------------------------
+		Pada bash script juga support array, berikut adalah contoh dari penggunaan array pada
+bash script.
+	ex :
+			vokalis={"Haikal","Noverdy","Alip"}
+			echo ${vokalis[0]} //output nya adalah Haikal
+			echo ${vokalis[1]} //output nya adalah Noverdy
+			echo ${vokalis[2]} //output nya adalah Alip
+			echo ${#vokalis[*]} // outputnya adalah jumlah isi array yaitu 3
+
+					
+			

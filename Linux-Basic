@@ -19,24 +19,24 @@ PERINTAH DASAR SHELL
 						  sekarang, ex : mkdir data 
 		> ls [options], berfungsi untuk menampilkan list konten dari directory yang sekarang
 					    dibuka.
-					> ls -l, untuk menampilkan list panjang informasi semua file/directory yang
-							 ada pada directory seperti permission, nama file, dll.
-					> ls -a, menunjukkan list file dan directory yang ter hidden
-					> ls /etc, menunjukkan isi konten dari masing masing directory
-					> ls -al, gabungan dari -l dan -a berfungsi untuk menampilkan list panjang
-							  informasi dari file/directory pada directory sekarang beserta file
-							  dan directory yang hidden
+				> ls -l, untuk menampilkan list panjang informasi semua file/directory yang
+					 ada pada directory seperti permission, nama file, dll.
+				> ls -a, menunjukkan list file dan directory yang ter hidden
+				> ls /etc, menunjukkan isi konten dari masing masing directory
+				> ls -al, gabungan dari -l dan -a berfungsi untuk menampilkan list panjang
+					  informasi dari file/directory pada directory sekarang beserta file
+				          dan directory yang hidden
 		> rm [option], digunakan untuk menghapus sebuah file pada directory yang sekarang dibuka
-					   ex : rm file1.txt
+			       ex : rm file1.txt
 		> rmdir [option], digunakan untuk menghapus sebuah directory.
 		> nano [option], digunakan untuk membuka dan membuat sebuah file text baru menggunakan
-						 nano text editor, ex : nano file.txt
+			         nano text editor, ex : nano file.txt
 		> touch [option], digunakan untuk membuat file baru yang kosong.
 		> mv [option] [option], digunakan untuk merubah nama sebuah file pada directory sekarang
-								ex : mv file1.txt file2.txt
+			                ex : mv file1.txt file2.txt
 		> mv [option], digunakan untuk memindahkan suatu file.
 		> cp [optiom], digunakan untuk meng-copy suatu file beserta isi konten nya ke directory lain
-					   ex : cp file1.txt /home/filetext
+			       ex : cp file1.txt /home/filetext
 
 MANUAL PAGES
 ----------------------------------------------------------------------------------------------
@@ -48,13 +48,13 @@ WILDCARD
 		Wildcard adalah character character spesial yang bisa digunakan pada shell linux. ada
 beberapa macam wildcard yang ada, berikut adalah beberapa macam wildcard.
 		> [option]*, berfungsi untuk mengekskusi semua file sesuai perintah dengan nama file
-					 sesuai option yang di inginkan, ex : rm file*.txt --> perintah ini akan
-					 menghapus semua file dengan awalan nama file dan berekstensi .txt
+			     sesuai option yang di inginkan, ex : rm file*.txt --> perintah ini akan
+			     menghapus semua file dengan awalan nama file dan berekstensi .txt
 		> [option]?, fungsinya hampir sama dengan "*", namun kalau "?" hanya akan mengekskusi file 
-					 dengan awalan nama sesuai option dan mengambil hanya satu character setelahnya
-					 ex : rm file?.txt akan menghapus semua file yang mempunya nama berawalan file
-					 dan diikuti hanya satu character setelahnya dan juga berekstensi .txt seperti
-					 file1.txt file2.txt dan sebagainya.
+		             dengan awalan nama sesuai option dan mengambil hanya satu character setelahnya
+			     ex : rm file?.txt akan menghapus semua file yang mempunya nama berawalan file
+			     dan diikuti hanya satu character setelahnya dan juga berekstensi .txt seperti
+			     file1.txt file2.txt dan sebagainya.
 		> [], berfungsi untuk menyatukan character yang di inginkan agar bisa di eksekusi secara
 			  bersamaan, ex : ls file.[jm]pg, perintah ini akan menampilkan informasi dari file
 			  yang berekstensi jpg dan mpg
@@ -97,8 +97,8 @@ cara memanggil variable bash yang sudah di buat selalu di awali dengan tanda "$"
 
 INPUT
 ----------------------------------------------------------------------------------------------
-		Pada bash script juga bisa memintak input an dari user dalam menjalankan sebuah programnya
-berikut adalah contoh input menggunakan bash script.
+		Pada bash script juga bisa memintak input an dari user dalam menjalankan sebuah 
+programnya berikut adalah contoh input menggunakan bash script.
 	ex :
 			echo "Siapa nama kamu?"
 			read nama
@@ -119,8 +119,8 @@ seperti pertambahan, pengurangan, perkalian, dll.
 		> ++, digunakan untuk operasi increment.
 		> --, digunakan untuk operasi decreament.
 		> %, digunakan untuk operasi sisa bagi atau biasa disebut modulus.
-lalu untuk menjalankan operasi - operasi diatas pada bash script terdapat beberapa cara, berikut
-adalah contoh menjalankan operasi operasi aritmatika pada bash script.
+		lalu untuk menjalankan operasi - operasi diatas pada bash script terdapat beberapa 
+cara, berikut adalah contoh menjalankan operasi operasi aritmatika pada bash script.
 		> let
 			ex : 	
 					var1=2
@@ -159,8 +159,8 @@ COMPARE STRING AND NUMBER
 			
 IF-ELSE STATEMENT
 ----------------------------------------------------------------------------------------------
-		Pada bash script juga bisa menggunakan logika kondisi seperti if else statement berikut
-adalah contoh penggunaan if else statement pada bash script.
+		Pada bash script juga bisa menggunakan logika kondisi seperti if else statement 
+berikut adalah contoh penggunaan if else statement pada bash script.
 	ex :
 			echo "Umur kamu berapa?"
 			read umur
@@ -182,6 +182,8 @@ adalah beberapa cara untuk penggunaan looping pada bash script
 
 FOR LOOPING
 ----------------------------------------------------------------------------------------------
+	For loop adalah sebuah perulangan yang dimana kita dari awal sudah tahu batas awal dan
+batas akhir dari looping yang akan kita jalankan.
 	ex :
 			for value in {1..5}
 			do
@@ -199,6 +201,8 @@ FOR LOOPING
 			
 WHILE LOOPING
 ----------------------------------------------------------------------------------------------
+	while loop adalah sebuah perulangan yang dimana kita belum tau batas awal atau batas akhir
+dari looping yang akan kita jalankan.
 	ex :
 			angka=1
 			while [ $angka -le 10 ]
@@ -222,14 +226,15 @@ WHILE LOOPING
 
 ARRAY
 ----------------------------------------------------------------------------------------------
-		Pada bash script juga support array, berikut adalah contoh dari penggunaan array pada
-bash script.
+		Pada bash script juga support array, berikut adalah contoh dari penggunaan array 
+pada bash script.
 	ex :
-			vokalis={"Haikal","Noverdy","Alip"}
+			vokalis={"Haikal","Noverdy","Alip","Patrick"}
 			echo ${vokalis[0]} //output nya adalah Haikal
 			echo ${vokalis[1]} //output nya adalah Noverdy
 			echo ${vokalis[2]} //output nya adalah Alip
-			echo ${#vokalis[*]} // outputnya adalah jumlah isi array yaitu 3
+			echi ${vokalis[3]} //output nya adalah Patrick
+			echo ${#vokalis[*]} // outputnya adalah jumlah isi array yaitu 4
 
 					
 			
